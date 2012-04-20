@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>org.jboss.bom</groupId>
-        <version>1.0.0.M3-redhat-1</version>
+        <version>1.0.0.M6-redhat-1</version>
         <artifactId>jboss-bom-parent</artifactId>
     </parent>
 
@@ -62,39 +62,13 @@
                 <version>${version.org.testng}</version>
             </dependency>
 
-            <!-- Arquillian lets test you your applications in real environment -->
+            <!-- Add Arquillian Dependencies certified as a part of JBoss Web Framework Kit -->
             <dependency>
-                <groupId>org.jboss.arquillian</groupId>
-                <artifactId>arquillian-bom</artifactId>
-                <version>${version.org.jboss.arquillian}</version>
+                <groupId>org.jboss.bom</groupId>
+                <artifactId>jboss-wfk-arquillian</artifactId>
+                <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-
-            <!-- Arquillian Drone adds support for visual testing of your application -->
-            <dependency>
-                <groupId>org.jboss.arquillian.extension</groupId>
-                <artifactId>arquillian-drone-bom</artifactId>
-                <version>${version.org.jboss.arquillian.extension.drone}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- Arquillian Ajocado is an enhanced tool based on Selenium allowing you to test AJAX more easily, bindings for JUnit -->
-            <!-- Note that JUnit is preferred framework -->
-            <dependency>
-                <groupId>org.jboss.arquillian.ajocado</groupId>
-                <artifactId>arquillian-ajocado-junit</artifactId>
-                <version>${version.org.jboss.arquillian.ajocado}</version>
-                <type>pom</type>
-            </dependency>
-
-            <!-- Arquillian Ajocado is an enhanced tool based on Selenium allowing you to test AJAX more easily, bindings for TestNG -->
-            <dependency>
-                <groupId>org.jboss.arquillian.ajocado</groupId>
-                <artifactId>arquillian-ajocado-testng</artifactId>
-                <version>${version.org.jboss.arquillian.ajocado}</version>
-                <type>pom</type>
             </dependency>
 
             <!-- Arquillian support for JBoss AS7 container -->
