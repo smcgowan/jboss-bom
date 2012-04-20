@@ -19,17 +19,25 @@
     </licenses>
 
     <properties>
+        <!-- Arquillian -->
         <version.org.jboss.arquillian>1.0.0.Final</version.org.jboss.arquillian>
         <!-- External Dependencies from Arquillian BOM -->
         <version.shrinkwrap_shrinkwrap>1.0.0</version.shrinkwrap_shrinkwrap>
         <!-- <version.shrinkwrap_resolver>1.0.0-beta-6</version.shrinkwrap_resolver> -->
         <!-- <version.shrinkwrap_descriptors>2.0.0-alpha-2</version.shrinkwrap_descriptors> -->
 
+        <!-- Arquillian Drone -->
         <version.org.jboss.arquillian.extension.drone>1.0.0.Final</version.org.jboss.arquillian.extension.drone>
+        
+        <!-- External Dependencies from Arquillian Drone -->
+        <version.org.seleniumhq.selenium.server>2.20.0</version.org.seleniumhq.selenium.server>
+        <version.org.seleniumhq.selenium>2.20.0</version.org.seleniumhq.selenium>
+        
+        <!-- Arquillian Graphene -->
         <version.org.jboss.arquillian.graphene>1.0.0.Final</version.org.jboss.arquillian.graphene>
-
+        
+        <!-- Containers -->
         <version.org.jboss.as>7.1.1.Final</version.org.jboss.as>
-
         <version.org.jboss.arquillian.container.tomcat55>1.0.0.CR3</version.org.jboss.arquillian.container.tomcat55>
         <version.org.jboss.arquillian.container.tomcat6>1.0.0.CR3</version.org.jboss.arquillian.container.tomcat6>
     </properties>
@@ -53,158 +61,182 @@
             <dependency>
                 <groupId>org.jboss.arquillian.core</groupId>
                 <artifactId>arquillian-core-api</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.core</groupId>
                 <artifactId>arquillian-core-spi</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.core</groupId>
                 <artifactId>arquillian-core-impl-base</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
 
             <!-- Config -->
             <dependency>
                 <groupId>org.jboss.arquillian.config</groupId>
                 <artifactId>arquillian-config-api</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.config</groupId>
                 <artifactId>arquillian-config-spi</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.config</groupId>
                 <artifactId>arquillian-config-impl-base</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
 
             <!-- Test -->
             <dependency>
                 <groupId>org.jboss.arquillian.test</groupId>
                 <artifactId>arquillian-test-api</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.test</groupId>
                 <artifactId>arquillian-test-spi</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.test</groupId>
                 <artifactId>arquillian-test-impl-base</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
 
             <!-- Container -->
             <dependency>
                 <groupId>org.jboss.arquillian.container</groupId>
                 <artifactId>arquillian-container-spi</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.container</groupId>
                 <artifactId>arquillian-container-impl-base</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
 
             <!-- Container Test -->
             <dependency>
                 <groupId>org.jboss.arquillian.container</groupId>
                 <artifactId>arquillian-container-test-api</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.container</groupId>
                 <artifactId>arquillian-container-test-spi</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.container</groupId>
                 <artifactId>arquillian-container-test-impl-base</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
 
             <!-- JUnit -->
             <dependency>
                 <groupId>org.jboss.arquillian.junit</groupId>
                 <artifactId>arquillian-junit-core</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.junit</groupId>
                 <artifactId>arquillian-junit-container</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.junit</groupId>
                 <artifactId>arquillian-junit-standalone</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
 
             <!-- TestNG -->
-            <dependency>
+            <!-- TestNG is not supported -->
+            <!--
+                <dependency>
                 <groupId>org.jboss.arquillian.testng</groupId>
                 <artifactId>arquillian-testng-core</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
+                <version>${version.org.jboss.arquillian}</version>
+                </dependency>
+                <dependency>
                 <groupId>org.jboss.arquillian.testng</groupId>
                 <artifactId>arquillian-testng-container</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
+                <version>${version.org.jboss.arquillian}</version>
+                </dependency>
+                <dependency>
                 <groupId>org.jboss.arquillian.testng</groupId>
                 <artifactId>arquillian-testng-standalone</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+                <version>${version.org.jboss.arquillian}</version>
+                </dependency>
+            -->
 
             <!-- Protocols -->
             <dependency>
                 <groupId>org.jboss.arquillian.protocol</groupId>
                 <artifactId>arquillian-protocol-servlet</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.protocol</groupId>
                 <artifactId>arquillian-protocol-jmx</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
 
             <!-- Enrichers -->
             <dependency>
                 <groupId>org.jboss.arquillian.testenricher</groupId>
                 <artifactId>arquillian-testenricher-cdi</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.testenricher</groupId>
                 <artifactId>arquillian-testenricher-ejb</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.testenricher</groupId>
                 <artifactId>arquillian-testenricher-resource</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.testenricher</groupId>
                 <artifactId>arquillian-testenricher-initialcontext</artifactId>
-                <version>${project.version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
 
-            <!-- ShrinkWrap -->
-            <dependency>
+            <!-- start of ShrinkWrap -->
+
+            <!-- BOM cannot be used directly here -->
+            <!--
+                <dependency>
                 <groupId>org.jboss.shrinkwrap</groupId>
                 <artifactId>shrinkwrap-bom</artifactId>
                 <version>${version.shrinkwrap_shrinkwrap}</version>
                 <type>pom</type>
                 <scope>import</scope>
+                </dependency>
+            -->
+
+            <dependency>
+                <groupId>org.jboss.shrinkwrap</groupId>
+                <artifactId>shrinkwrap-api</artifactId>
+                <version>${version.shrinkwrap_shrinkwrap}</version>
             </dependency>
+            <dependency>
+                <groupId>org.jboss.shrinkwrap</groupId>
+                <artifactId>shrinkwrap-spi</artifactId>
+                <version>${version.shrinkwrap_shrinkwrap}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.shrinkwrap</groupId>
+                <artifactId>shrinkwrap-impl-base</artifactId>
+                <version>${version.shrinkwrap_shrinkwrap}</version>
+            </dependency>
+            <!-- end of ShrinkWrap -->
 
             <!-- ShrinkWrap Resolver -->
             <!-- ShrinkWrap Resolver is not supported -->
@@ -233,12 +265,113 @@
 
             <!-- start of Arquillian Drone -->
 
-            <dependency>
+            <!-- BOM cannot be used directly here -->
+            <!--
+                <dependency>
                 <groupId>org.jboss.arquillian.extension</groupId>
                 <artifactId>arquillian-drone-bom</artifactId>
                 <version>${version.org.jboss.arquillian.extension.drone}</version>
                 <type>pom</type>
                 <scope>import</scope>
+                </dependency>
+            -->
+
+
+            <dependency>
+                <groupId>org.jboss.arquillian.extension</groupId>
+                <artifactId>arquillian-drone-api</artifactId>
+                <version>${version.org.jboss.arquillian.extension.drone}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.extension</groupId>
+                <artifactId>arquillian-drone-spi</artifactId>
+                <version>${version.org.jboss.arquillian.extension.drone}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.extension</groupId>
+                <artifactId>arquillian-drone-configuration</artifactId>
+                <version>${version.org.jboss.arquillian.extension.drone}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.extension</groupId>
+                <artifactId>arquillian-drone-impl</artifactId>
+                <version>${version.org.jboss.arquillian.extension.drone}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.extension</groupId>
+                <artifactId>arquillian-drone-selenium</artifactId>
+                <version>${version.org.jboss.arquillian.extension.drone}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.extension</groupId>
+                <artifactId>arquillian-drone-selenium-server</artifactId>
+                <version>${version.org.jboss.arquillian.extension.drone}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.extension</groupId>
+                <artifactId>arquillian-drone-webdriver</artifactId>
+                <version>${version.org.jboss.arquillian.extension.drone}</version>
+            </dependency>
+
+            <!-- Selenium Server -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-server</artifactId>
+                <version>${version.org.seleniumhq.selenium.server}</version>
+            </dependency>
+
+            <!-- Selenium dependecies -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-api</artifactId>
+                <version>${version.org.seleniumhq.selenium}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${version.org.seleniumhq.selenium}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-support</artifactId>
+                <version>${version.org.seleniumhq.selenium}</version>
+            </dependency>
+
+            <!-- Drivers -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-android-driver</artifactId>
+                <version>${version.org.seleniumhq.selenium}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-chrome-driver</artifactId>
+                <version>${version.org.seleniumhq.selenium}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-firefox-driver</artifactId>
+                <version>${version.org.seleniumhq.selenium}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-htmlunit-driver</artifactId>
+                <version>${version.org.seleniumhq.selenium}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-ie-driver</artifactId>
+                <version>${version.org.seleniumhq.selenium}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-iphone-driver</artifactId>
+                <version>${version.org.seleniumhq.selenium}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-remote-driver</artifactId>
+                <version>${version.org.seleniumhq.selenium}</version>
             </dependency>
 
             <!-- Dependency Chains -->
